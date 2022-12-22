@@ -1,6 +1,14 @@
-const { internet } = require("faker");
+const { internet, name, address, phone} = require("faker");
 const username = internet.userName();
 const password = internet.password();
+const firstName = name.firstName();
+const lastName = name.lastName();
+const street = address.streetAddress();
+const city = address.city();
+const state = address.state();
+const zipCode = address.zipCode();
+const phoneNumber = phone.phoneNumber();
+
 
 describe("Account registration", () => {
   beforeEach(() => {
@@ -26,15 +34,15 @@ describe("Account registration", () => {
     it(`shows "Your account created successfully" message when the form is filled properly`, () => {
       cy.get("#loginPanel").contains("Register").click();
       cy.get('[id="customer.firstName"]').click();
-      cy.get('[id="customer.firstName"]').type("hellow");
+      cy.get('[id="customer.firstName"]').type(firstName);
       cy.get('[id="customer.lastName"]').click();
-      cy.get('[id="customer.lastName"]').type("here");
-      cy.get('[id="customer.address.street"]').type("here");
-      cy.get('[id="customer.address.city"]').type("here");
-      cy.get('[id="customer.address.state"]').type("here");
-      cy.get('[id="customer.address.zipCode"]').type("here");
-      cy.get('[id="customer.phoneNumber"]').type("here");
-      cy.get('[id="customer.ssn"]').type("here");
+      cy.get('[id="customer.lastName"]').type(lastName);
+      cy.get('[id="customer.address.street"]').type(street);
+      cy.get('[id="customer.address.city"]').type(city);
+      cy.get('[id="customer.address.state"]').type(state);
+      cy.get('[id="customer.address.zipCode"]').type(zipCode);
+      cy.get('[id="customer.phoneNumber"]').type(phoneNumber);
+      cy.get('[id="customer.ssn"]').type("Number");
       cy.get('[id="customer.username"]').type(username);
       cy.get('[id="customer.password"]').type(password);
       cy.get("#repeatedPassword").type(password);
@@ -48,15 +56,15 @@ describe("Account registration", () => {
     it(`shows error message when user enters an already exisiting username`, () => {
       cy.get("#loginPanel").contains("Register").click();
       cy.get('[id="customer.firstName"]').click();
-      cy.get('[id="customer.firstName"]').type("hellow");
+      cy.get('[id="customer.firstName"]').type(firstName);
       cy.get('[id="customer.lastName"]').click();
-      cy.get('[id="customer.lastName"]').type("here");
-      cy.get('[id="customer.address.street"]').type("here");
-      cy.get('[id="customer.address.city"]').type("here");
-      cy.get('[id="customer.address.state"]').type("here");
-      cy.get('[id="customer.address.zipCode"]').type("here");
-      cy.get('[id="customer.phoneNumber"]').type("here");
-      cy.get('[id="customer.ssn"]').type("here");
+      cy.get('[id="customer.lastName"]').type(lastName);
+      cy.get('[id="customer.address.street"]').type(street);
+      cy.get('[id="customer.address.city"]').type(city);
+      cy.get('[id="customer.address.state"]').type(state);
+      cy.get('[id="customer.address.zipCode"]').type(zipCode);
+      cy.get('[id="customer.phoneNumber"]').type(phoneNumber);
+      cy.get('[id="customer.ssn"]').type("Number");
       cy.get('[id="customer.username"]').type(username);
       cy.get('[id="customer.password"]').type(password);
       cy.get("#repeatedPassword").type(password);
@@ -70,15 +78,15 @@ describe("Account registration", () => {
     it(`shows error message when user entered password in password confirmation field mismatches`, () => {
       cy.get("#loginPanel").contains("Register").click();
       cy.get('[id="customer.firstName"]').click();
-      cy.get('[id="customer.firstName"]').type("hellow");
+      cy.get('[id="customer.firstName"]').type(firstName);
       cy.get('[id="customer.lastName"]').click();
-      cy.get('[id="customer.lastName"]').type("here");
-      cy.get('[id="customer.address.street"]').type("here");
-      cy.get('[id="customer.address.city"]').type("here");
-      cy.get('[id="customer.address.state"]').type("here");
-      cy.get('[id="customer.address.zipCode"]').type("here");
-      cy.get('[id="customer.phoneNumber"]').type("here");
-      cy.get('[id="customer.ssn"]').type("here");
+      cy.get('[id="customer.lastName"]').type(lastName);
+      cy.get('[id="customer.address.street"]').type(street);
+      cy.get('[id="customer.address.city"]').type(city);
+      cy.get('[id="customer.address.state"]').type(state);
+      cy.get('[id="customer.address.zipCode"]').type(zipCode);
+      cy.get('[id="customer.phoneNumber"]').type(phoneNumber);
+      cy.get('[id="customer.ssn"]').type("Number");
       cy.get('[id="customer.username"]').type(username);
       cy.get('[id="customer.password"]').type(password);
       cy.get("#repeatedPassword").type("wrongpassword");
