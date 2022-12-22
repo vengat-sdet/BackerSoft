@@ -1,0 +1,32 @@
+{
+  "devDependencies": {
+    "cypress": "^12.1.0"
+  },
+  "dependencies": {
+    "faker": "^5.5.3",
+    "prettier": "^2.8.1"
+  },
+  "name": "backersoft",
+  "version": "1.0.0",
+  "description": "backersoft automation",
+  "main": "cypress.config.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vengat-sdet/BackerSoft.git"
+  },
+  "keywords": [
+    "backerSoft",
+    "automation",
+    "Docker"
+  ],
+  "author": "Vengat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vengat-sdet/BackerSoft/issues"
+  },
+  "homepage": "https://github.com/vengat-sdet/BackerSoft#readme"
+}
